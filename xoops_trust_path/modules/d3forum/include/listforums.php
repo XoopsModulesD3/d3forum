@@ -12,7 +12,7 @@ list( $total_posts_count ) = $db->fetchRow( $db->query( $sql ) ) ;
 
 // get last visit
 if( $uid > 0 ) {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$lv_result = $db->query( "SELECT MAX(u2t_time) FROM ".$db->prefix($mydirname.'_users2topics')." WHERE uid='$uid'" ) ;
 	list( $last_visit ) = $db->fetchRow( $lv_result ) ;
 }

@@ -1,6 +1,6 @@
 <?php
 
-$db =& Database::getInstance() ;
+$db = Database::getInstance() ;
 
 //
 // form stage

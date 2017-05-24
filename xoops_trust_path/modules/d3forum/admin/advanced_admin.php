@@ -6,8 +6,8 @@ require_once dirname(dirname(__FILE__)).'/include/transact_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/include/import_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/class/d3forum.textsanitizer.php' ;
 require_once dirname(dirname(__FILE__)).'/class/gtickets.php' ;
-$myts =& D3forumTextSanitizer::sGetInstance() ;
-$db =& Database::getInstance() ;
+$myts = D3forumTextSanitizer::sGetInstance() ;
+$db = Database::getInstance() ;
 
 
 $importable_modules = d3forum_import_getimportablemodules( $mydirname ) ;

@@ -31,8 +31,8 @@ function d3forum_get_rssdata ($mydirname, $limit=0, $offset=0, $forum_id=0, $cat
 	}
 	
 	require_once dirname(dirname(__FILE__)).'/class/d3forum.textsanitizer.php' ;
-	(method_exists('D3forumTextSanitizer', 'sGetInstance') and  $myts =& D3forumTextSanitizer::sGetInstance()) || $myts =& D3forumTextSanitizer::getInstance() ;
-	$db =& Database::getInstance() ;
+	(method_exists('D3forumTextSanitizer', 'sGetInstance') and  $myts = D3forumTextSanitizer::sGetInstance()) || $myts = D3forumTextSanitizer::getInstance() ;
+	$db = Database::getInstance() ;
 	
 	$forum_id = ($forum_id)? ' AND f.forum_id='.intval($forum_id) : '';
 	$cat_id = ($whr_cat_ids)? ' AND ' . $whr_cat_ids : '';

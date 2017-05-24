@@ -2,7 +2,7 @@
 
 function b_waiting_d3forum( $mydirname )
 {
-	$db =& Database::getInstance();
+	$db = Database::getInstance();
 	$ret = array() ;
 
 	$sql = "SELECT COUNT(*),MIN(post_id) FROM ".$db->prefix($mydirname."_posts")." WHERE approval=0" ;

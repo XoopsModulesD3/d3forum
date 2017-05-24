@@ -4,8 +4,8 @@ require_once dirname(dirname(__FILE__)).'/include/main_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/include/common_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/class/d3forum.textsanitizer.php' ;
 require_once dirname(dirname(__FILE__)).'/class/gtickets.php' ;
-$myts =& D3forumTextSanitizer::sGetInstance() ;
-$db =& Database::getInstance() ;
+$myts = D3forumTextSanitizer::sGetInstance() ;
+$db = Database::getInstance() ;
 
 // get right $cat_id
 $cat_id = intval( @$_GET['cat_id'] ) ;
@@ -112,7 +112,7 @@ while( list( $id , $title , $depth ) = $db->fetchRow( $crs ) ) {
 
 // create group form
 $group_handler =& xoops_gethandler( 'group' ) ;
-$groups =& $group_handler->getObjects() ;
+$groups = $group_handler->getObjects() ;
 $group_trs = '' ;
 foreach( $groups as $group ) {
 	$gid = $group->getVar('groupid') ;

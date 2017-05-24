@@ -4,8 +4,8 @@ require_once dirname(dirname(__FILE__)).'/include/main_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/include/common_functions.php' ;
 require_once dirname(dirname(__FILE__)).'/class/d3forum.textsanitizer.php' ;
 require_once dirname(dirname(__FILE__)).'/class/gtickets.php' ;
-$myts =& D3forumTextSanitizer::sGetInstance() ;
-$db =& Database::getInstance() ;
+$myts = D3forumTextSanitizer::sGetInstance() ;
+$db = Database::getInstance() ;
 
 // get right $forum_id
 $forum_id = intval( @$_GET['forum_id'] ) ;
@@ -101,7 +101,7 @@ if( ! empty( $_POST['user_update'] ) && empty( $invaild_forum_id ) ) {
 
 // create group form
 $group_handler =& xoops_gethandler( 'group' ) ;
-$groups =& $group_handler->getObjects() ;
+$groups = $group_handler->getObjects() ;
 $group_trs = '' ;
 foreach( $groups as $group ) {
 	$gid = $group->getVar('groupid') ;
