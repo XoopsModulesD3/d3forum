@@ -1,7 +1,7 @@
 <?php
 
 //error_reporting(E_ALL);
-//$xoopsErrorHandler =& XoopsErrorHandler::getInstance();
+//$xoopsErrorHandler = XoopsErrorHandler::getInstance();
 //$xoopsErrorHandler->activate(true);
 
 $cache_min = 5;

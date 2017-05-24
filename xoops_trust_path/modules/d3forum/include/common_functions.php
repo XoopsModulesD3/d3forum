@@ -6,7 +6,7 @@ function d3forum_get_forums_can_read( $mydirname )
 {
 	global $xoopsUser ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	if( is_object( $xoopsUser ) ) {
 		$uid = intval( $xoopsUser->getVar('uid') ) ;
@@ -47,7 +47,7 @@ function d3forum_get_categories_can_read( $mydirname )
 {
 	global $xoopsUser ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	if( is_object( $xoopsUser ) ) {
 		$uid = intval( $xoopsUser->getVar('uid') ) ;
@@ -85,8 +85,8 @@ function d3forum_get_submenu( $mydirname )
 	$config_handler =& xoops_gethandler('config') ;
 	$mod_config =& $config_handler->getConfigsByCat( 0 , $module->getVar('mid') ) ;
 
-	$db =& Database::getInstance() ;
-	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
+	$db = Database::getInstance() ;
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance();
 
 	$whr_read4cat = '`cat_id` IN (' . implode( "," , d3forum_get_categories_can_read( $mydirname ) ) . ')' ;
 	$whr_read4forum = '`forum_id` IN (' . implode( "," , d3forum_get_forums_can_read( $mydirname ) ) . ')' ;
@@ -175,7 +175,7 @@ function d3forum_common_unhtmlspecialchars( $text )
 
 function d3forum_common_simple_request( $params )
 {
-	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance() ;
 	$requests = array() ;
 	$whrs = array() ;
 	$queries = array() ;

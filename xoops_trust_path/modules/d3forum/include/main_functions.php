@@ -54,7 +54,7 @@ function d3forum_get_forum_permissions_of_current_user( $mydirname )
 {
 	global $xoopsUser ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	if( is_object( $xoopsUser ) ) {
 		$uid = intval( $xoopsUser->getVar('uid') ) ;
@@ -81,7 +81,7 @@ function d3forum_get_category_permissions_of_current_user( $mydirname )
 {
 	global $xoopsUser ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	if( is_object( $xoopsUser ) ) {
 		$uid = intval( $xoopsUser->getVar('uid') ) ;
@@ -106,7 +106,7 @@ function d3forum_get_category_permissions_of_current_user( $mydirname )
 // check done
 function d3forum_get_users_can_read_forum( $mydirname , $forum_id , $cat_id = null )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$forum_id = intval( $forum_id ) ;
 	$forum_uids = array() ;
 	$cat_uids = array() ;
@@ -147,7 +147,7 @@ function d3forum_get_users_can_read_forum( $mydirname , $forum_id , $cat_id = nu
 // check done
 function d3forum_get_forum_moderate_groups4show( $mydirname , $forum_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$forum_id = intval( $forum_id ) ;
 
@@ -170,7 +170,7 @@ function d3forum_get_forum_moderate_users4show( $mydirname , $forum_id )
 {
 	global $xoopsUser, $xoopsModuleConfig ;	// naao edited
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$forum_id = intval( $forum_id ) ;
 
@@ -196,7 +196,7 @@ function d3forum_get_forum_moderate_users4show( $mydirname , $forum_id )
 // check done
 function d3forum_get_category_moderate_groups4show( $mydirname , $cat_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$cat_id = intval( $cat_id ) ;
 
@@ -219,7 +219,7 @@ function d3forum_get_category_moderate_users4show( $mydirname , $cat_id )
 {
 	global $xoopsUser, $xoopsModuleConfig ;	// naao edited
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$cat_id = intval( $cat_id ) ;
 
@@ -247,7 +247,7 @@ function d3forum_make_jumpbox_options( $mydirname , $whr4cat , $whr4forum , $for
 {
 	global $myts ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$ret = "" ;
 	$sql = "SELECT c.cat_id, c.cat_title, c.cat_depth_in_tree, f.forum_id, f.forum_title FROM ".$db->prefix($mydirname."_categories")." c LEFT JOIN ".$db->prefix($mydirname."_forums")." f ON f.cat_id=c.cat_id WHERE ($whr4cat) AND ($whr4forum) ORDER BY c.cat_order_in_tree, f.forum_weight" ;
@@ -269,7 +269,7 @@ function d3forum_make_cat_jumpbox_options( $mydirname , $whr4cat , $cat_selected
 {
 	global $myts ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$ret = "" ;
 	$sql = "SELECT c.cat_id, c.cat_title, c.cat_depth_in_tree FROM ".$db->prefix($mydirname."_categories")." c WHERE ($whr4cat) ORDER BY c.cat_order_in_tree" ;
@@ -290,7 +290,7 @@ function d3forum_trigger_event( $mydirname ,  $category , $item_id , $event , $e
 {
 	require_once XOOPS_TRUST_PATH.'/libs/altsys/class/D3NotificationHandler.class.php' ;
 
-	$not_handler =& D3NotificationHandler::getInstance() ;
+	$not_handler = D3NotificationHandler::getInstance() ;
 	$not_handler->triggerEvent( $mydirname , 'd3forum' , $category , $item_id , $event , $extra_tags , $user_list , $omit_user_id ) ;
 }
 
@@ -356,7 +356,7 @@ function d3forum_main_get_categoryoptions4edit( $d3forum_configs_can_be_override
 // hook topic_id/external_link_id into $_POST['mode'] = 'reply' , $_POST['post_id']
 function d3forum_main_posthook_sametopic( $mydirname )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	if( ! empty( $_POST['external_link_id'] ) ) {
 		// search the first post of the latest topic with the external_link_id

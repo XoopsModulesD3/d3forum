@@ -12,7 +12,7 @@ function d3forum_display_comment_topicscount( $mydirname , $forum_id , $params ,
 	$mydirpath = XOOPS_ROOT_PATH.'/modules/'.$mydirname ;
 	$mytrustdirpath = dirname( dirname( __FILE__ ) ) ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	// external_link_id
 	if( ! empty( $params['link_id'] ) ) {
@@ -109,7 +109,7 @@ function d3forum_display_comment( $mydirname , $forum_id , $params )
 		$m_params['external_trustdirname'] = $external_trustdirname  ;
 
 		if( class_exists( $class_name ) ) {
-			$obj =& D3commentObj::getInstance ( $m_params ) ;
+			$obj = D3commentObj::getInstance ( $m_params ) ;
 			$external_link_id = $obj->d3comObj->external_link_id( $params ) ;
 		}
 		// naao to
@@ -143,7 +143,7 @@ function d3forum_render_comments( $mydirname , $forum_id , $params , &$smarty )
 	$mytrustdirname = basename( dirname( dirname( __FILE__ ) ) ) ;
 	$mytrustdirpath = dirname( dirname( __FILE__ ) ) ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	// extract $external_* from $parms
 	$external_link_id = $params['external_link_id'] ;
@@ -154,7 +154,7 @@ function d3forum_render_comments( $mydirname , $forum_id , $params , &$smarty )
 	$langmanpath = XOOPS_TRUST_PATH.'/libs/altsys/class/D3LanguageManager.class.php' ;
 	if( ! file_exists( $langmanpath ) ) die( 'install the latest altsys' ) ;
 	require_once( $langmanpath ) ;
-	$langman =& D3LanguageManager::getInstance() ;
+	$langman = D3LanguageManager::getInstance() ;
 	$langman->read( 'main.php' , $mydirname , $mytrustdirname ) ;
 
 	// local $xoopsModuleConfig

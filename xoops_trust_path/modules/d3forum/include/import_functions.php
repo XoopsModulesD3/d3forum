@@ -137,7 +137,7 @@ $GLOBALS['d3forum_tables'] = array(
 
 function d3forum_import_getimportablemodules( $mydirname )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$module_handler =& xoops_gethandler( 'module' ) ;
 	$modules = $module_handler->getObjects() ;
 
@@ -177,7 +177,7 @@ function d3forum_import_getimportablemodules( $mydirname )
 
 function d3forum_import_errordie()
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	echo _MD_A_D3FORUM_ERR_SQLONIMPORT ;
 	echo $db->logger->dumpQueries() ;
@@ -188,7 +188,7 @@ function d3forum_import_errordie()
 
 function d3forum_import_from_cbb3( $mydirname , $import_mid )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$from_prefix = 'bb' ;
 
 	// get group_ids
@@ -261,7 +261,7 @@ function d3forum_import_from_cbb3( $mydirname , $import_mid )
 
 function d3forum_import_from_newbb1( $mydirname , $import_mid )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$from_prefix = 'bb' ;
 
 	// get group_ids
@@ -364,7 +364,7 @@ function d3forum_import_from_newbb1( $mydirname , $import_mid )
 
 function d3forum_import_from_xhnewbb( $mydirname , $import_mid )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$from_prefix = 'xhnewbb' ;
 
 	// get group_ids
@@ -468,7 +468,7 @@ function d3forum_import_from_xhnewbb( $mydirname , $import_mid )
 
 function d3forum_import_from_d3forum( $mydirname , $import_mid )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$module_handler =& xoops_gethandler( 'module' ) ;
 	$from_module =& $module_handler->get( $import_mid ) ;
@@ -486,7 +486,7 @@ function d3forum_import_from_d3forum( $mydirname , $import_mid )
 
 function d3forum_comimport_as_topics( $mydirname , $mid , $forum_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	// check forum_id
 	$frs = $db->query( "SELECT * FROM ".$db->prefix($mydirname."_forums")." WHERE forum_id=$forum_id" ) ;
@@ -529,7 +529,7 @@ function d3forum_comimport_as_topics( $mydirname , $mid , $forum_id )
 
 function d3forum_comimport_posts_recursive( $mydirname , $topic_id , $com_id , $pid4posts = 0 )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$to_table = $db->prefix( $mydirname.'_posts' ) ;
 	$from_table = $db->prefix( 'xoopscomments' ) ;
@@ -546,7 +546,7 @@ function d3forum_comimport_posts_recursive( $mydirname , $topic_id , $com_id , $
 
 function d3forum_export_forum_to_d3forum( $mydirname , $export_mid , $export_cat_id , $cat_id , $forum_id , $is_move = false )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$module_handler =& xoops_gethandler( 'module' ) ;
 	$to_module =& $module_handler->get( $export_mid ) ;
@@ -585,7 +585,7 @@ function d3forum_export_forum_to_d3forum( $mydirname , $export_mid , $export_cat
 
 function d3forum_export_topic_to_d3forum( $mydirname , $export_mid , $export_forum_id , $forum_id , $topic_id , $is_move = false )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$module_handler =& xoops_gethandler( 'module' ) ;
 	$to_module =& $module_handler->get( $export_mid ) ;

@@ -288,7 +288,7 @@ function processCommentNotifications( $mode , $link_id , $forum_id , $topic_id ,
 	$users2notify = d3forum_get_users_can_read_forum( $this->d3forum_dirname , $forum_id ) ;
 	if( empty( $users2notify ) ) $users2notify = array( 0 ) ;
 
-	$not_handler =& D3NotificationHandler::getInstance() ;
+	$not_handler = D3NotificationHandler::getInstance() ;
 	$not_handler->triggerEvent( $this->mydirname , $this->mytrustdirname , $not_category , $not_itemid , $not_event , $comment_tags , $users2notify ) ;
 }
 
@@ -297,7 +297,7 @@ function processCommentNotifications( $mode , $link_id , $forum_id , $topic_id ,
 // override it if necessary
 function countComments( $params )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$forum_id = $params['forum_id'] ;
 	$mydirname = $params['forum_dirname'] ;
@@ -324,7 +324,7 @@ function countComments( $params )
 // returns posts count (does not check the permissions)
 function getPostsCount( $forum_id , $link_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	list( $count ) = $db->fetchRow( $db->query( "SELECT COUNT(*) FROM ".$db->prefix($this->d3forum_dirname."_posts")." p LEFT JOIN ".$db->prefix($this->d3forum_dirname."_topics")." t ON t.topic_id=p.topic_id WHERE t.forum_id=$forum_id AND t.topic_external_link_id='$link_id'" ) ) ;
 
@@ -335,7 +335,7 @@ function getPostsCount( $forum_id , $link_id )
 // returns topics count (does not check the permissions)
 function getTopicsCount( $forum_id , $link_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	list( $count ) = $db->fetchRow( $db->query( "SELECT COUNT(*) FROM ".$db->prefix($this->d3forum_dirname."_topics")." t WHERE t.forum_id=$forum_id AND t.topic_external_link_id='$link_id'" ) ) ;
 

@@ -10,8 +10,8 @@ function b_d3forum_list_forums_show( $options )
 
 	if( preg_match( '/[^0-9a-zA-Z_-]/' , $mydirname ) ) die( 'Invalid mydirname' ) ;
 
-	$db =& Database::getInstance();
-	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
+	$db = Database::getInstance();
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance();
 	$uid = is_object( @$xoopsUser ) ? $xoopsUser->getVar('uid') : 0 ;
 
 	$module_handler =& xoops_gethandler('module');
@@ -128,8 +128,8 @@ function b_d3forum_list_topics_show( $options )
 
 	if( preg_match( '/[^0-9a-zA-Z_-]/' , $mydirname ) ) die( 'Invalid mydirname' ) ;
 
-	$db =& Database::getInstance();
-	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
+	$db = Database::getInstance();
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance();
 	$uid = is_object( @$xoopsUser ) ? $xoopsUser->getVar('uid') : 0 ;
 
 	$module_handler =& xoops_gethandler('module');
@@ -431,8 +431,8 @@ function b_d3forum_list_posts_show( $options )
 
 	if( preg_match( '/[^0-9a-zA-Z_-]/' , $mydirname ) ) die( 'Invalid mydirname' ) ;
 
-	$db =& Database::getInstance();
-	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance();
+	$db = Database::getInstance();
+	(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance();
 	$uid = is_object( @$xoopsUser ) ? $xoopsUser->getVar('uid') : 0 ;
 
 	$module_handler =& xoops_gethandler('module');

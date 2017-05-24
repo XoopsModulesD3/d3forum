@@ -22,7 +22,7 @@ class D3forumTextSanitizer extends MyTextSanitizer
 	
 	function &getInstance()
 	{
-		$instance =& self::sGetInstance();
+		$instance = self::sGetInstance();
 		return $instance;
 	}
 

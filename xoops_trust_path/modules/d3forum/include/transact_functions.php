@@ -5,7 +5,7 @@
 // call back for comment integration
 function d3forum_main_d3comment_callback( $mydirname , $topic_id , $mode = 'update' , $post_id = 0 )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$topic_id = intval( $topic_id ) ;
 
@@ -23,7 +23,7 @@ function d3forum_main_d3comment_callback( $mydirname , $topic_id , $mode = 'upda
 // delete posts recursively
 function d3forum_delete_post_recursive( $mydirname , $post_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$post_id = intval( $post_id ) ;
 
@@ -55,7 +55,7 @@ function d3forum_delete_topic( $mydirname , $topic_id , $delete_also_posts = tru
 {
 	global $xoopsModule ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$topic_id = intval( $topic_id ) ;
 
@@ -85,7 +85,7 @@ function d3forum_delete_forum( $mydirname , $forum_id , $delete_also_topics = tr
 {
 	global $xoopsModule ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$forum_id = intval( $forum_id ) ;
 
@@ -115,7 +115,7 @@ function d3forum_delete_category( $mydirname , $cat_id , $delete_also_forums = t
 {
 	global $xoopsModule ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$cat_id = intval( $cat_id ) ;
 
@@ -143,7 +143,7 @@ function d3forum_delete_category( $mydirname , $cat_id , $delete_also_forums = t
 // store redundant informations to a category from its forums
 function d3forum_sync_category( $mydirname , $cat_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$cat_id = intval( $cat_id ) ;
 
@@ -179,7 +179,7 @@ function d3forum_sync_category( $mydirname , $cat_id )
 
 function d3forum_sync_cattree( $mydirname )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	// rebuild tree informations
 	$tree_array = d3forum_makecattree_recursive( $db->prefix($mydirname."_categories") , 0 ) ;
@@ -207,7 +207,7 @@ function d3forum_sync_cattree( $mydirname )
 
 function d3forum_makecattree_recursive( $tablename , $cat_id , $order = 'cat_weight' , $parray = array() , $depth = 0 , $cat_title = '' )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$parray[] = array( 'cat_id' => $cat_id , 'depth' => $depth , 'cat_title' => $cat_title ) ;
 
@@ -226,7 +226,7 @@ function d3forum_makecattree_recursive( $tablename , $cat_id , $order = 'cat_wei
 // store redundant informations to a forum from its topics
 function d3forum_sync_forum( $mydirname , $forum_id , $sync_also_category = true )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$forum_id = intval( $forum_id ) ;
 
@@ -249,7 +249,7 @@ function d3forum_sync_forum( $mydirname , $forum_id , $sync_also_category = true
 // and rebuild tree informations (depth, order_in_tree)
 function d3forum_sync_topic( $mydirname , $topic_id , $sync_also_forum = true , $sync_topic_title = false )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$topic_id = intval( $topic_id ) ;
 
@@ -297,7 +297,7 @@ function d3forum_sync_topic( $mydirname , $topic_id , $sync_also_forum = true , 
 // store redundant informations to a topic from its posts
 function d3forum_sync_topic_votes( $mydirname , $topic_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$topic_id = intval( $topic_id ) ;
 
@@ -319,7 +319,7 @@ function d3forum_sync_topic_votes( $mydirname , $topic_id )
 // store redundant informations to a post from its post_votes
 function d3forum_sync_post_votes( $mydirname , $post_id , $sync_also_topic_votes = true )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$post_id = intval( $post_id ) ;
 
@@ -340,7 +340,7 @@ function d3forum_sync_post_votes( $mydirname , $post_id , $sync_also_topic_votes
 
 function d3forum_maketree_recursive( $tablename , $post_id , $order = 'post_id' , $parray = array() , $depth = 0 , $unique_path = '.1' )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$parray[] = array( 'post_id' => $post_id , 'depth' => $depth , 'unique_path' => $unique_path ) ;
 
@@ -372,7 +372,7 @@ function d3forum_maketree_recursive( $tablename , $post_id , $order = 'post_id' 
 
 function d3forum_cutpasteposts( $mydirname , $post_id , $pid , $new_forum_id , $forum_permissions , $isadmin )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$post_id = intval( $post_id ) ;
 	$pid = intval( $pid ) ;
@@ -442,7 +442,7 @@ function d3forum_update_topic_from_post( $mydirname , $topic_id , $forum_id , $f
 {
 	global $myts ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$sql4set = '' ;
 
@@ -488,7 +488,7 @@ function d3forum_get_requests4sql_forum( $mydirname )
 {
 	global $myts , $xoopsModuleConfig ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	include dirname(dirname(__FILE__)).'/include/constant_can_override.inc.php' ;
 	$options = array() ;
@@ -531,7 +531,7 @@ function d3forum_get_requests4sql_forum( $mydirname )
 // create a forum
 function d3forum_makeforum( $mydirname , $cat_id , $isadmin )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$requests = d3forum_get_requests4sql_forum( $mydirname ) ;
 
@@ -550,7 +550,7 @@ function d3forum_makeforum( $mydirname , $cat_id , $isadmin )
 // update a forum
 function d3forum_updateforum( $mydirname , $forum_id , $isadmin )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$requests = d3forum_get_requests4sql_forum( $mydirname ) ;
 
@@ -566,7 +566,7 @@ function d3forum_get_requests4sql_category( $mydirname )
 {
 	global $myts , $xoopsModuleConfig ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	include dirname(dirname(__FILE__)).'/include/constant_can_override.inc.php' ;
 	$options = array() ;
@@ -612,7 +612,7 @@ function d3forum_makecategory( $mydirname )
 {
 	global $xoopsUser ;
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$requests = d3forum_get_requests4sql_category( $mydirname ) ;
 
@@ -649,7 +649,7 @@ function d3forum_makecategory( $mydirname )
 // update a category
 function d3forum_updatecategory( $mydirname , $cat_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 
 	$requests = d3forum_get_requests4sql_category( $mydirname ) ;
 
@@ -674,7 +674,7 @@ function d3forum_updatecategory( $mydirname , $cat_id )
 // make a new history entry for a post
 function d3forum_transact_make_post_history( $mydirname , $post_id , $full_backup = false )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$post_id = intval( $post_id ) ;
 
 	$result = $db->query( "SELECT * FROM ".$db->prefix($mydirname."_posts")." WHERE post_id=$post_id" ) ;
@@ -701,7 +701,7 @@ function d3forum_transact_make_post_history( $mydirname , $post_id , $full_backu
 // turning topic_solved of all topics in the category on (batch action)
 function d3forum_transact_turnsolvedon_in_category( $mydirname , $cat_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$cat_id = intval( $cat_id ) ;
 
 	$sql = "SELECT forum_id FROM ".$db->prefix($mydirname."_forums")." WHERE cat_id=$cat_id" ;
@@ -715,7 +715,7 @@ function d3forum_transact_turnsolvedon_in_category( $mydirname , $cat_id )
 // turning topic_solved of all topics in the forum on (batch action)
 function d3forum_transact_turnsolvedon_in_forum( $mydirname , $forum_id )
 {
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$forum_id = intval( $forum_id ) ;
 
 	$sql = "UPDATE ".$db->prefix($mydirname."_topics")." SET topic_solved=1 WHERE forum_id=$forum_id" ;
